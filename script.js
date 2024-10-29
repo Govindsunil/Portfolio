@@ -76,10 +76,10 @@ projectItems.forEach((item) => {
     openModal(item); // Open modal with the clicked item data
   });
 });
-//for clear
-// Add event listener to the close button and overlay to close the modal
+//for clear// Add event listener to the close button and overlay to close the modal
 closeModalBtn.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
+
 // Select all filter buttons and project items
 const filterButtons = document.querySelectorAll("[data-filter-btn]");
 const selectItems = document.querySelectorAll("[data-select-item]");
@@ -114,37 +114,37 @@ filterButtons.forEach((button) => {
     filterProjects(category);
   });
 });
+// custom select variables
+const select = document.querySelector("[data-select]");
+const selectValue = document.querySelector("[data-selecct-value]");
 
-// Event listeners for select items
-selectItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    // Get the category from the selected item
-    const category = item.textContent;
+// toggle the select dropdown on click
+select.addEventListener("click", function () {
+  elementToggleFunc(this);
+});
+selectItems.forEach((button) => {
+  button.addEventListener("click", () => {
+    // Remove active class from all buttons
+    selectItems.forEach((btn) => btn.classList.remove("active"));
+    // Add active class to the clicked button
+    button.classList.add("active");
+
+    // Get the category from the button text
+    const category = button.textContent;
+
+    // Update the displayed value in the select box
+    document.querySelector("[data-selecct-value]").textContent = category;
 
     // Filter projects based on category
     filterProjects(category);
 
-    // Update the select value display
-    document.querySelector("[data-selecct-value]").textContent = category;
-
-    // Close the select list after selection (optional)
-    const selectList = item.closest(".select-list");
-    selectList.style.display = "none"; // Hide the select list
+    // Close the dropdown after selection
+    select.classList.remove("active"); // Hide the dropdown
   });
 });
-
-// Optional: Toggle select list visibility
-document.querySelector("[data-select]").addEventListener("click", () => {
-  const selectList = document.querySelector(".select-list");
-  selectList.style.display =
-    selectList.style.display === "block" ? "none" : "block";
-});
-
-// Close select list when clicking outside (optional)
-document.addEventListener("click", (event) => {
-  const selectBox = document.querySelector(".filter-select-box");
-  if (!selectBox.contains(event.target)) {
-    const selectList = document.querySelector(".select-list");
-    selectList.style.display = "none"; // Hide the select list
+// Optional: Close the dropdown when clicking outside of it
+document.addEventListener("click", (e) => {
+  if (!select.contains(e.target)) {
+    select.classList.remove("active"); // Hide the dropdown
   }
 });
