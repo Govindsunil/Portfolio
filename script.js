@@ -45,18 +45,24 @@ const closeModalBtn = document.querySelector("[data-modal-close-btn]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalImg = document.querySelector("[data-modal-img]");
 const modalText = document.querySelector("[data-modal-text]");
+const modalDate = document.querySelector("[data-modal-date]");
+const modalLink = document.querySelector("[data-modal-link]");
 
 // Function to open the modal
 function openModal(project) {
   // Extract data from the clicked project
   const title = project.getAttribute("data-title");
-  const description = project.getAttribute("data-description");
-  const imgSrc = project.getAttribute("data-img");
+  const description = project.getAttribute("data-description"); //Fetch discriotion
+  const imgSrc = project.getAttribute("data-img"); //Fetch image
+  const date = project.getAttribute("data-date"); // Fetch the date
+  const link = project.getAttribute("data-link"); // Get project link
 
   // Update modal content
   modalTitle.textContent = title; // Set the title in the modal
   modalImg.src = imgSrc; // Update the image in the modal
   modalText.innerHTML = `<p>${description}</p>`; // Update the description text
+  modalDate.textContent = date; //Updare date
+  modalLink.href = link; // Set the href for the view link
 
   // Display the modal
   modalContainer.classList.add("active");

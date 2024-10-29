@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vCard - Personal Portfolio</title>
+    <title>Portfolio</title>
 
     <!--
     - favicon
@@ -165,7 +165,7 @@
             </li>
 
             <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Portfolio</button>
+              <button class="navbar-link" data-nav-link>Porject</button>
             </li>
 
             <li class="navbar-item">
@@ -397,9 +397,10 @@
         - #PORTFOLIO
       -->
 
-        <article class="portfolio" data-page="portfolio">
+        <article class="portfolio" data-page="porject">
           <header>
-            <h2 class="h2 article-title">Portfolio</h2>
+            <!-- potfolio to project  -->
+            <h2 class="h2 article-title">Porject</h2>
           </header>
           <!-- for the filter -->
           <section class="projects">
@@ -457,9 +458,11 @@
                 data-project-item
                 data-title="SECURE BRIDGE"
                 data-description="I developed a web page login authentication method using visual cryptography, where the user is asked to enter a secret key as text. This text is then encrypted and split into two image shares. One share is stored in the database alongside the username, password, and secret key text, while the other is provided to the user. During login, the user uploads their image share, which is combined with the stored database image to reveal the secret key. If the revealed key matches the registered key, access is granted. This approach enhances security by ensuring access only for users with the correct image share"
+                data-date="2023-Jan-18"
+                data-link="https://github.com/Govindsunil/Multifactor-Authentication-in-webpage--by-using-Visual-Cryptography-"
                 data-img="./assets/images/project-2.png"
               >
-                <a href="#">
+                <a>
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <i class="fas fa-eye"></i>
@@ -480,9 +483,11 @@
                 data-project-item
                 data-title="PORTFOLIO"
                 data-description="I created this portfolio website as part of developing a web page project."
+                data-date="2024-Sep-30"
+                data-link="https://github.com/Govindsunil/Portfolio"
                 data-img="./assets/images/project-1.png"
               >
-                <a href="#">
+                <a>
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <i class="fas fa-eye"></i>
@@ -507,9 +512,11 @@
                 It supports both light and dark themes, allowing users to switch seamlessly based on preference. 
                 The app features basic arithmetic and percentage calculations, housed within a minimal, responsive layout designed for optimal user experience on mobile devices. 
                 Developed in Kotlin, it leverages Jetpack Compose for declarative UI and Exp4j for efficient mathematical expression parsing. This project highlights expertise in Kotlin and Android development, demonstrating a commitment to clean, functional, and aesthetic app design."
+                data-date="2024-Jun-25"
+                data-link="https://github.com/Govindsunil/calculator-Android-app"
                 data-img="./assets/images/project-4.png"
               >
-                <a href="#">
+                <a>
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <i class="fas fa-eye"></i>
@@ -534,9 +541,11 @@
                 This device initiates data retrieval upon connection to a suspected system, capturing essential logs, activity events, and security details. 
                 To preserve data integrity, CF2I generates hash values and stores them securely, implementing read-only and write-lock measures to prevent unauthorized modifications. 
                 Future updates include enhanced data gathering and brute-force unlocking capabilities. CF2I streamlines forensic investigations by automating critical steps, ensuring a faster, secure, and reliable process for collecting and safeguarding digital evidence."
-                data-img="./assets/images/project-4.png"
+                data-date="2024-jan-05"
+                data-link="#"
+                data-img="./assets/images/project-3.jpeg"
               >
-                <a href="#">
+                <a>
                   <figure class="project-img">
                     <div class="project-item-icon-box">
                       <i class="fas fa-eye"></i>
@@ -578,11 +587,21 @@
 
                   <div class="modal-content">
                     <h4 class="h3 modal-title" data-modal-title>image</h4>
-                    <time datetime="2021-06-14">14 June, 2021</time>
+                    <time datetime="2021-06-14" data-modal-date
+                      >14 June, 2021</time
+                    >
+
                     <div data-modal-text>
                       <p>popup description number one</p>
                       <!-- This will be dynamically updated -->
                     </div>
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="view-project-link"
+                      data-modal-link
+                      >View Project</a
+                    >
                   </div>
                 </section>
               </div>
