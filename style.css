@@ -1970,3 +1970,6 @@ textarea.form-input::-webkit-resizer {
     max-width: 700px;
   }
 }
+.view-project-link {
+  color: var(--orange-yellow-crayola);
+}

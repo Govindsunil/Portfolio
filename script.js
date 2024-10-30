@@ -52,17 +52,24 @@ const modalLink = document.querySelector("[data-modal-link]");
 function openModal(project) {
   // Extract data from the clicked project
   const title = project.getAttribute("data-title");
-  const description = project.getAttribute("data-description"); //Fetch discriotion
-  const imgSrc = project.getAttribute("data-img"); //Fetch image
-  const date = project.getAttribute("data-date"); // Fetch the date
-  const link = project.getAttribute("data-link"); // Get project link
+  const description = project.getAttribute("data-description");
+  const imgSrc = project.getAttribute("data-img");
+  const date = project.getAttribute("data-date");
+  const link = project.getAttribute("data-link");
 
   // Update modal content
-  modalTitle.textContent = title; // Set the title in the modal
-  modalImg.src = imgSrc; // Update the image in the modal
-  modalText.innerHTML = `<p>${description}</p>`; // Update the description text
-  modalDate.textContent = date; //Updare date
-  modalLink.href = link; // Set the href for the view link
+  modalTitle.textContent = title;
+  modalImg.src = imgSrc;
+  modalText.innerHTML = `<p>${description}</p>`;
+  modalDate.textContent = date;
+
+  // Check if there's a valid link
+  if (link) {
+    modalLink.href = link;
+    modalLink.style.display = "inline"; // Show the link
+  } else {
+    modalLink.style.display = "none"; // Hide the link
+  }
 
   // Display the modal
   modalContainer.classList.add("active");
