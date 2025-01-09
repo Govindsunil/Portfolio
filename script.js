@@ -47,6 +47,7 @@ const modalImg = document.querySelector("[data-modal-img]");
 const modalText = document.querySelector("[data-modal-text]");
 const modalDate = document.querySelector("[data-modal-date]");
 const modalLink = document.querySelector("[data-modal-link]");
+const modalsiteLink = document.querySelector("[data-modal-sitelink]");
 
 // Function to open the modal
 function openModal(project) {
@@ -56,6 +57,7 @@ function openModal(project) {
   const imgSrc = project.getAttribute("data-img");
   const date = project.getAttribute("data-date");
   const link = project.getAttribute("data-link");
+  const sitelink = project.getAttribute("site-link");
 
   // Update modal content
   modalTitle.textContent = title;
@@ -63,12 +65,18 @@ function openModal(project) {
   modalText.innerHTML = `<p>${description}</p>`;
   modalDate.textContent = date;
 
-  // Check if there's a valid link
+  // Check if there's a valid link for sites and project
   if (link) {
     modalLink.href = link;
     modalLink.style.display = "inline"; // Show the link
   } else {
     modalLink.style.display = "none"; // Hide the link
+  }
+  if (sitelink) {
+    modalsiteLink.href = sitelink;
+    modalsiteLink.style.display = "inline"; // Show the link
+  } else {
+    modalsiteLink.style.display = "none"; // Hide the link
   }
 
   // Display the modal
