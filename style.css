@@ -1863,3 +1863,25 @@ textarea.form-input::-webkit-resizer {
 a + a {
   margin-left: 15px;
 }
+.badge-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.badge-row img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+}
+
+.badge-row img:hover {
+  transform: scale(1.05);
+}
